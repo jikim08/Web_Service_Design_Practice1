@@ -15,11 +15,7 @@ public class SongController {
     public final Map<Long, SongDto> store = new HashMap<>();
     private Long nextId = 1L;
 
-    @GetMapping
-    public List<SongDto> getAllSongs(){
-        return new ArrayList<>(store.values());
-    }
-
+    //ID로 노래검색
     @GetMapping("/{id}")
     public ResponseEntity<SongDto> getSong(@PathVariable Long id){
         SongDto song = store.get(id);
@@ -29,6 +25,7 @@ public class SongController {
         return ResponseEntity.ok(song);
     }
 
+    //노래 생성
     @PostMapping
     public ResponseEntity<SongDto> createSong(@RequestBody SongCreateRequest request){
         SongDto song = new SongDto();
@@ -40,6 +37,7 @@ public class SongController {
         return ResponseEntity.ok(song);
     }
 
+    //노래 정보 수정
     @PutMapping("/{id}")
     public ResponseEntity<SongDto> updateSong(@PathVariable Long id, @RequestBody SongCreateRequest request){
         SongDto song = store.get(id);
@@ -57,6 +55,7 @@ public class SongController {
         return ResponseEntity.ok(song);
     }
 
+    //노래 삭제
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteSong(@PathVariable Long id){
         SongDto song = store.get(id);

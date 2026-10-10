@@ -7,7 +7,7 @@ public class PlayListCreateRequest {
     private String name;        //플레이리스트 이름
     private String description;     //플레이리스트 설명
     private List<Long> songIDs;    //포함된 음악 ID
-
+    
     //Getter
     public String getName() {
         return name;
