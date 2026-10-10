@@ -1,14 +1,14 @@
 package kr.ac.jbnu.kjh.practice1.dto;
 
-public class ApiResponse<T> {
+public class ApiResponse {
     private String status;
-    private T data;
+    private Object data;
 
     public String getStatus() {
         return status;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
@@ -16,7 +16,7 @@ public class ApiResponse<T> {
         this.status = status;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }
