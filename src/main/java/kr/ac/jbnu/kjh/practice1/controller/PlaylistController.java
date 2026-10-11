@@ -56,7 +56,7 @@ public class PlaylistController {
         response.setData(playList);
         //저장
         store.put(playList.getId(), playList);
-        return ResponseEntity.status(200).body(response);
+        return ResponseEntity.status(201).body(response);
     }
 
     //플레이리스트 수정
